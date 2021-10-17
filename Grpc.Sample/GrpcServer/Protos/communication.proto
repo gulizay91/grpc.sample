@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer.Protos";
+
+package Communication;
+
+service CommunicationService {
+	rpc Communicate(stream.Communication.DialogMessage) returns (stream.Communication.DialogMessage);
+}
+
+message DialogMessage {
+	string username=1;
+	string message=2;
+}
